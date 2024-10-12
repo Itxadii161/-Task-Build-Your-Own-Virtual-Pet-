@@ -6,7 +6,7 @@ var pet = {
     hunger : +prompt('How hungry is your pet? (a number between 0 and 100).'),
 
 // feed(): This should decrease the hunger level by 20, but it can’t go below 0.
-    feed : function(){
+    feed : function() {
  
             if(this.hunger > 20) {
                 this.hunger = this.hunger - 20;
@@ -20,7 +20,7 @@ var pet = {
 
     // play(): This should increase happiness by 20, but it can’t exceed 100.
     
-    play : function(){
+    play : function() {
 
             if(this.happiness < 100) {
                 this.happiness += 20;
@@ -45,8 +45,8 @@ var pet = {
             } else {
                 this.hunger = 100; 
             }
-        alert(Your`${this.name} is now ${this.age} years. Happiness level is ${this.happiness}, Hunger level is ${this.hunger}`);
-    }
+        alert(`Your "${this.name}" is now "${this.age}" years. Happiness level is "${this.happiness}", Hunger level is "${this.hunger}"`);
+    },
 };
 
 // Interaction loop
@@ -78,8 +78,8 @@ function interactWithPet() {
    
     while (true) {
 
-    let action = prompt("What would you like to do with your pet? (feed, play, age, exit)");
-    
+    let action = prompt("What would you like to do with your pet?\n 1:feed \n 2: play \n 3: age \n 4: exit");
+
        if (action === "feed") {
             pet.feed();
         } else if (action === "play") {
@@ -90,10 +90,9 @@ function interactWithPet() {
             alert("Thanks for taking care of your pet!");
             break;
         } else {
-            alert("Please choose a valid action: feed, play, age, or exit.");      
+            alert("Please choose a valid action: \n 1:feed \n 2: play \n 3: age \n 4: exit");    
         }
     }
 }
 
-// Start the interaction
 interactWithPet();
