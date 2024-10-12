@@ -47,27 +47,49 @@ var pet = {
 };
 
 // Interaction loop
-function dd() {
-const action = prompt("What would you like to do? (feed, play, age, info, exit)");
-while (action !== 'exit') {
-    switch (action) {
-        case "feed":
-            pet.feed();
-            break;
-        case "play":
-            pet.play();
-            break;
-        case "age":
-            pet.agePet();
-            break;
-        // case "exit":
-        //     alert("Goodbye! Take care of your pet!");
-        //     break;
-        default:
-            alert("Invalid action! Please choose feed, play, age, info, or exit.");
-    }
+// function dd() {
+// const action = prompt("What would you like to do? (feed, play, age, info, exit)");
+// while (action !== 'exit') {
+//     switch (action) {
+//         case "feed":
+//             pet.feed();
+//             break;
+//         case "play":
+//             pet.play();
+//             break;
+//         case "age":
+//             pet.agePet();
+//             break;
+//         // case "exit":
+//         //     alert("Goodbye! Take care of your pet!");
+//         //     break;
+//         default:
+//             alert("Invalid action! Please choose feed, play, age, info, or exit.");
+//     }
 
-    if (action === "exit") break;
+//     if (action === "exit") break;
+// }
+// }
+// dd()
+function interactWithPet() {
+    while (true) {
+        let action = prompt("What would you like to do with your pet? (feed, play, age, exit)");
+
+        if (action === "feed") {
+            pet.feed();
+        } else if (action === "play") {
+            pet.play();
+        } else if (action === "age") {
+            pet.agePet();
+        } else if (action === "exit") {
+            alert("Thanks for taking care of your pet!");
+            break;
+        } else {
+            alert("Please choose a valid action: feed, play, age, or exit.");
+           
+        }
+    }
 }
-}
-dd()
+
+// Start the interaction
+interactWithPet();
