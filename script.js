@@ -44,6 +44,30 @@ var pet = {
         this.hunger -= 10;
         alert(`${this.name} is ${this.age} ${this.hunger} ${this.happiness}`)
     }
+};
+
+// Interaction loop
+function dd() {
+const action = prompt("What would you like to do? (feed, play, age, info, exit)");
+while (action !== 'exit') {
+    switch (action) {
+        case "feed":
+            pet.feed();
+            break;
+        case "play":
+            pet.play();
+            break;
+        case "age":
+            pet.agePet();
+            break;
+        // case "exit":
+        //     alert("Goodbye! Take care of your pet!");
+        //     break;
+        default:
+            alert("Invalid action! Please choose feed, play, age, info, or exit.");
+    }
+
+    if (action === "exit") break;
 }
-
-
+}
+dd()
