@@ -1,11 +1,27 @@
+function getNumber(input) {
+    input = input.trim()
+    while (isNaN(input) || input === null || input === "") {
+        input = prompt("Please enter a valid number:").trim();
+    }
+    return +input;
+}
+function getString(input) {
+    input = input.trim();
+    while (input === "") {
+        input = prompt("Please enter a valid name:").trim();
+    }
+    return input;
+}
+// creating pet object
 var pet = {
-    name : prompt("Give your pet a name.") ,
-    type : prompt('What kind of pet is it? (e.g., "dog", "cat", "dragon").') ,
-    age : +prompt('How old is your pet?'),
-    happiness : +prompt('How happy is your pet? (a number between 0 and 100).'),
-    hunger : +prompt('How hungry is your pet? (a number between 0 and 100).'),
+    name : getString(prompt("Give your pet a name.").trim()) ,
+    type : getString(prompt('What kind of pet is it? (e.g., "dog", "cat", "dragon").').trim()) ,
+    age : getNumber(prompt('How old is your pet?').trim()),
+    happiness : getNumber(prompt('How happy is your pet? (a number between 0 and 100).')),
+    hunger : getNumber(prompt('How hungry is your pet? (a number between 0 and 100).').trim()) ,
 
-// feed(): This should decrease the hunger level by 20, but it can’t go below 0.
+// feed(): This should decrease the hunger level by 20, but it can’t go below 0.// Function to get a valid number
+
     feed : function() {
  
             if(this.hunger > 20) {
@@ -37,6 +53,7 @@ var pet = {
         this.age += 1;
         if (this.happiness >= 5) {
             this.happiness -= 5;
+            // this.happiness = this.happiness -5;
         } else {
             this.happiness = 0; 
         }
@@ -78,19 +95,19 @@ function interactWithPet() {
    
     while (true) {
 
-    let action = prompt("What would you like to do with your pet?\n 1:feed \n 2: play \n 3: age \n 4: exit");
+    let action = prompt("What would you like to do with your pet?\n 1: feed \n 2: play \n 3: age \n 4: exit");
 
-       if (action === "feed") {
+       if (action === "1") {
             pet.feed();
-        } else if (action === "play") {
+        } else if (action === "2") {
             pet.play();
-        } else if (action === "age") {
+        } else if (action === "3") {
             pet.agePet();
-        } else if (action === "exit") {
+        } else if (action === "4") {
             alert("Thanks for taking care of your pet!");
             break;
         } else {
-            alert("Please choose a valid action: \n 1:feed \n 2: play \n 3: age \n 4: exit");    
+            alert("Please choose a valid action: \n 1: feed \n 2: play \n 3: age \n 4: exit");    
         }
     }
 }
