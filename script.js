@@ -65,32 +65,7 @@ var pet = {
         alert(`Your "${this.name}" is now "${this.age}" years. Happiness level is "${this.happiness}", Hunger level is "${this.hunger}"`);
     },
 };
-
-// Interaction loop
-// function dd() {
-// const action = prompt("What would you like to do? (feed, play, age, info, exit)");
-// while (action !== 'exit') {
-//     switch (action) {
-//         case "feed":
-//             pet.feed();
-//             break;
-//         case "play":
-//             pet.play();
-//             break;
-//         case "age":
-//             pet.agePet();
-//             break;
-//         // case "exit":
-//         //     alert("Goodbye! Take care of your pet!");
-//         //     break;
-//         default:
-//             alert("Invalid action! Please choose feed, play, age, info, or exit.");
-//     }
-
-//     if (action === "exit") break;
-// }
-// }
-// dd()
+// function to perform some tasks
 function interactWithPet() {
    
     while (true) {
@@ -111,5 +86,5 @@ function interactWithPet() {
         }
     }
 }
-
+// to get function or call
 interactWithPet();
