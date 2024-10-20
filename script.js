@@ -70,7 +70,7 @@ function interactWithPet() {
    
     while (true) {
 
-    let action = prompt("What would you like to do with your pet?\n 1: feed \n 2: play \n 3: age \n 4: exit");
+    let action = prompt("What would you like to do with your pet?\n Please enter number. \n 1: feed \n 2: play \n 3: age \n 4: exit");
 
        if (action === "1") {
             pet.feed();
