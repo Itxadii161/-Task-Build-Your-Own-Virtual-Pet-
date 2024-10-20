@@ -36,13 +36,14 @@ var pet = {
 
     // play(): This should increase happiness by 20, but it can’t exceed 100.
     
+ 
     play : function() {
 
             if(this.happiness < 100) {
                 this.happiness += 20;
             }
-            else if(this.happiness > 100){
-                this.happiness = 100
+            if(this.happiness > 100){
+                this.happiness = 100;
             }
             alert(`Your ${this.name} is ${this.happiness}% happy`)
         },
